@@ -11,6 +11,17 @@ margin_top = 15.0
 margin_right = 305.0
 margin_bottom = 42.0
 value = 50.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ProgressBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "100 / 200"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

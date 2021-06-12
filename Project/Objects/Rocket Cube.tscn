@@ -11,9 +11,9 @@ extents = Vector2( 30, 30 )
 [node name="Rocket Cube" type="CollisionShape2D"]
 shape = SubResource( 1 )
 script = ExtResource( 2 )
-acceleration = 600.0
 mass = 1.0
-fuel = 10.0
+fuel = 20.0
+acceleration = 600.0
 
 [node name="Area2D" type="Area2D" parent="."]
 

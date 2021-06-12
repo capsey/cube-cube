@@ -39,9 +39,9 @@ func _get_input():
 func _update_center():
 	var center = Vector2.ZERO
 	
-	if(_cubes.size() <= 1):
+	if(_cubes.size() == 0):
 		emit_signal("center_changed", center)
-		pass
+		return center
 	
 	var x = 0
 	var y = 0
@@ -53,9 +53,22 @@ func _update_center():
 	center = Vector2(x / _cubes.size(), y / _cubes.size())
 	
 	emit_signal("center_changed", center)
+	return center
 
 # PUBLIC METHODS
-func add_cube(cube: CollisionShape2D):
+func set_fuel(amount: float):
+	_fuel = amount
+	
+	if _fuel < 0:
+		_fuel = 0
+		print("Game Over!")
+	
+	emit_signal("fuel_changed", _fuel, _max_fuel)
+
+func add_fuel(amount: float):
+	set_fuel(_fuel + amount)
+
+func add_cube(cube):
 	connect("rocket", cube, "_on_start_rocket")
 	mass += cube.mass
 	
@@ -67,11 +80,21 @@ func add_cube(cube: CollisionShape2D):
 	
 	print(name + ": " + cube.name + " succesfully connected!")
 
-func add_fuel(amount: float):
-	_fuel += amount
+func remove_cube(cube):	
+	mass -= cube.mass
 	
-	if _fuel < 0:
-		_fuel = 0
-		print("Game Over!")
+	_max_fuel -= cube.fuel
+	var k = float(_cubes.size() - 1) / float(_cubes.size())
+	var new_fuel = _fuel * k
+	set_fuel(new_fuel)
 	
-	emit_signal("fuel_changed", _fuel, _max_fuel)
+	_cubes.remove(_cubes.find(cube))
+	var center = _update_center()
+	
+	var impulse = center - cube.position
+	linear_velocity = impulse.normalized() * 200
+	
+	cube.destroy()
+	
+	if _cubes.size() == 0:
+		linear_velocity = Vector2.ZERO
