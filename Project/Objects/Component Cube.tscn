@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/ComponentCube.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Rocket Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://default_material.tres" type="PhysicsMaterial" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )
@@ -11,6 +12,7 @@ extents = Vector2( 30, 30 )
 
 [node name="Component Cube" type="RigidBody2D"]
 mode = 2
+physics_material_override = ExtResource( 4 )
 script = ExtResource( 2 )
 connecting_cube = ExtResource( 3 )
 

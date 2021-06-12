@@ -11,9 +11,7 @@ var player: RigidBody2D
 # PRIVATE METHODS
 func _ready():
 	player = get_node(player_path)
-	
-	player.connect("rocket", self, "_on_start_rocket")
-	player.mass += mass
+	player.add_cube(self)
 
 func _on_start_rocket(delta, direction, body: RigidBody2D):
 	body.apply_central_impulse(direction * acceleration * delta)

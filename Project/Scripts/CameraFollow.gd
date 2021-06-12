@@ -2,14 +2,18 @@ extends Camera2D
 
 # PUBLIC
 export var target_path: NodePath
-export(float, 0, 1) var smoothness: float
 
 # PRIVATE
-var target: Node2D
+var _target: Node2D
+var _offset: Vector2
 
 # PRIVATE METHODS
 func _ready():
-	target = get_node(target_path)
+	_target = get_node(target_path)
 
 func _process(_delta):
-	position = position.linear_interpolate(target.position, smoothness)
+	position = _target.position + _offset
+
+# PUBLIC METHODS
+func center_changed(new_center: Vector2):
+	_offset = new_center

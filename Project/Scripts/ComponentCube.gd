@@ -4,7 +4,7 @@ extends Node2D
 export var connecting_cube: Resource
 
 # PRIVATE METHODS
-func get_relative_position(center: Vector2, rotation: float):
+func _snap_position(center: Vector2):
 	var result = position - center
 	
 	var snap = 65
@@ -20,6 +20,6 @@ func connect_rocket_cube(player: RigidBody2D):
 	player.call_deferred("add_child", instance)
 	
 	instance.player_path = player.get_path()
-	instance.position = get_relative_position(player.position, player.rotation)
+	instance.position = _snap_position(player.position)
 	
 	queue_free()
