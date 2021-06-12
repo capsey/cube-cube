@@ -4,14 +4,21 @@ extends RigidBody2D
 signal rocket(delta, direction, body)
 
 signal center_changed(new_center)
+signal fuel_changed(value, max_f)
 
 # PRIVATE
-var offset: Vector2
 var _cubes: Array
+
+var _max_fuel: float
+var _fuel: float
 
 # PRIVATE METHODS
 func _process(delta):
 	var direction = _get_input()
+	
+	if direction == Vector2.ZERO: return
+	if _fuel <= 0: return
+	
 	emit_signal("rocket", delta, direction, self)
 
 func _get_input():
@@ -27,26 +34,25 @@ func _get_input():
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
 	
-	return direction
+	return direction.normalized()
 
 func _update_center():
-	var center = _cubes[0].position
+	var center = Vector2.ZERO
 	
 	if(_cubes.size() <= 1):
-		return center
+		emit_signal("center_changed", center)
+		pass
 	
-	for i in range(1, _cubes.size()):
-		center = _middle_point(center, _cubes[i].position)
+	var x = 0
+	var y = 0
+	
+	for c in _cubes:
+		x += c.position.x
+		y += c.position.y
+	
+	center = Vector2(x / _cubes.size(), y / _cubes.size())
 	
 	emit_signal("center_changed", center)
-
-func _middle_point(a: Vector2, b: Vector2):
-	var result = Vector2.ZERO
-	
-	result.x = (a.x + b.x) / 2
-	result.y = (a.y + b.y) / 2
-	
-	return result
 
 # PUBLIC METHODS
 func add_cube(cube: CollisionShape2D):
@@ -56,4 +62,16 @@ func add_cube(cube: CollisionShape2D):
 	_cubes.append(cube)
 	_update_center()
 	
+	_max_fuel += cube.fuel
+	add_fuel(cube.fuel)
+	
 	print(name + ": " + cube.name + " succesfully connected!")
+
+func add_fuel(amount: float):
+	_fuel += amount
+	
+	if _fuel < 0:
+		_fuel = 0
+		print("Game Over!")
+	
+	emit_signal("fuel_changed", _fuel, _max_fuel)

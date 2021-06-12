@@ -13,9 +13,7 @@ shape = SubResource( 1 )
 script = ExtResource( 2 )
 acceleration = 600.0
 mass = 1.0
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+fuel = 10.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -34,5 +32,9 @@ shape = SubResource( 2 )
 [node name="Down CollisionShape" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 30 )
 shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.501961, 1, 0.501961, 1 )
+texture = ExtResource( 1 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
