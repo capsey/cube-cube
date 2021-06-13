@@ -157,21 +157,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Thanks6" type="Label" parent="."]
-margin_left = 1327.18
-margin_top = 543.85
-margin_right = 2146.19
-margin_bottom = 1107.85
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 300, 30 )
-custom_fonts/font = ExtResource( 9 )
-text = "I'm waiting for export templates
-to download, so I'm writing this
-
-Also Jam will close in 30 minutes
-and I have only 3 levels, that sucks"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [connection signal="center_changed" from="Player" to="Main Camera" method="center_changed"]

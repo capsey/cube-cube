@@ -4,7 +4,7 @@
 
 You play as cute little rocket robot cube named "CUBE" to save his friends from space junk and deadly lasers! Connect with other cubes and make your way to Winner Cube. Try to take as many friends as you can!
 
-The game was created for GMTK Game Jam 2021
+The game was created for GMTK Game Jam 2021, but I missed deadline so here we are
 
 ![GMTK Game Jam 2021 logo](https://img.itch.zone/aW1nLzYyMTYzNzIucG5n/original/2v%2Ftg3.png)
 
