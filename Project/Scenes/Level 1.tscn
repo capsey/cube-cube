@@ -28,18 +28,19 @@ position = Vector2( -596.427, -180.238 )
 position = Vector2( 172.741, -207.784 )
 
 [node name="Winner Cube" parent="." instance=ExtResource( 7 )]
-position = Vector2( 493.785, -523.925 )
+position = Vector2( 473.986, -532.41 )
+cubes_count = 3
 
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Wall" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( -229.853, 389.753 )
+position = Vector2( -210.054, 378.439 )
 
 [node name="Wall2" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( -231.972, 203.288 )
+position = Vector2( -217.83, 203.288 )
 
 [node name="Wall3" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( -231.972, 10.4653 )
+position = Vector2( -217.83, 10.4653 )
 
 [node name="Wall4" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( -422.676, 10.4653 )
@@ -69,7 +70,7 @@ position = Vector2( 206.645, 12.5843 )
 position = Vector2( 200.288, 186.336 )
 
 [node name="Wall13" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 208.763, 383.396 )
+position = Vector2( 188.964, 383.396 )
 
 [node name="Wall14" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( 395.229, 14.7032 )
@@ -112,3 +113,6 @@ position = Vector2( -801.964, 6.22797 )
 
 [node name="Wall27" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( -801.964, -360.346 )
+
+[node name="Wall28" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 1.3103, 386.36 )

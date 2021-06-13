@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Component Cube Rocket.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Manager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Component Cube Fuel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Cube Winner.tscn" type="PackedScene" id=8]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -54,6 +55,10 @@ position = Vector2( 629.358, 173.241 )
 
 [node name="Component Cube Rocket5" parent="Cubes" instance=ExtResource( 1 )]
 position = Vector2( -90.488, -423.661 )
+
+[node name="Winner Cube" parent="Cubes" instance=ExtResource( 8 )]
+position = Vector2( 1117.23, -178.191 )
+cubes_count = 9
 
 [node name="Laser" parent="." instance=ExtResource( 6 )]
 position = Vector2( 407.167, 604.199 )

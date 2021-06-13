@@ -110,3 +110,4 @@ func disable():
 
 func you_won():
 	set_process(false)
+	emit_signal("rocket", 0, Vector2.ZERO, self)

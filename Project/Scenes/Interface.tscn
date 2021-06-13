@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Interface.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/fuel_bar.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/fuel_bar_fill.png" type="Texture" id=3]
+[ext_resource path="res://small label.tres" type="DynamicFont" id=4]
 
 [node name="Interface" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -29,10 +30,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 15.0
-margin_top = 38.0
-margin_right = 315.8
-margin_bottom = 98.16
+margin_left = 126.0
+margin_top = 60.0
+margin_right = 204.0
+margin_bottom = 76.0
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "100 / 100"
