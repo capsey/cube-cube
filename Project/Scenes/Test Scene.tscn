@@ -59,6 +59,7 @@ position = Vector2( -90.488, -423.661 )
 [node name="Winner Cube" parent="Cubes" instance=ExtResource( 8 )]
 position = Vector2( 1117.23, -178.191 )
 cubes_count = 9
+next_scene = null
 
 [node name="Laser" parent="." instance=ExtResource( 6 )]
 position = Vector2( 407.167, 604.199 )

@@ -1,6 +1,7 @@
 extends "res://Scripts/ComponentCube.gd"
 
 export var cubes_count: int
+export var next_scene: Resource
 
 func _ready():
 	if cubes_count <= 0: push_error("Cubes Count can't be 0 or less!")
@@ -15,4 +16,4 @@ func _on_area_entered(area):
 	
 	var instance = load("res://Objects/Win Screen.tscn").instance()
 	get_parent().add_child(instance)
-	instance.init(player._cubes.size(), cubes_count)
+	instance.init(player._cubes.size(), cubes_count, next_scene)
