@@ -16,8 +16,9 @@ func _ready():
 	
 	if Engine.editor_hint: return
 	get_node("Timer").wait_time = timer
+	update_laser(length)
 
-func _process(delta):
+func _process(_delta):
 	if not Engine.editor_hint: return
 	_ready()
 	
@@ -25,6 +26,9 @@ func _process(delta):
 
 func _on_body_shape_entered(_body_id, body: RigidBody2D, body_shape, _local_shape):	
 	if Engine.editor_hint: return
+	
+	if body.has_method("destroy"):
+		body.destroy()
 	
 	if body.has_method("remove_cube"):
 		body.remove_cube(body.get_child(body_shape))
@@ -36,9 +40,9 @@ func _on_Timer_timeout():
 	
 
 # PUBLIC METHODS
-func update_laser(length: float):
-	collision.shape.length = length
+func update_laser(new_length: float):
+	collision.shape.length = new_length
 	
 	line.clear_points()
 	line.add_point(Vector2.ZERO)
-	line.add_point(Vector2.DOWN * length)
+	line.add_point(Vector2.DOWN * new_length)

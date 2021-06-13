@@ -15,8 +15,6 @@ var _fuel: float
 # PRIVATE METHODS
 func _process(delta):
 	var direction = _get_input()
-	
-	if direction == Vector2.ZERO: return
 	if _fuel <= 0: return
 	
 	emit_signal("rocket", delta, direction, self)
@@ -60,6 +58,7 @@ func set_fuel(amount: float):
 	_fuel = amount
 	
 	if _fuel < 0:
+		emit_signal("rocket", 0, Vector2.ZERO, self)
 		_fuel = 0
 		print("Game Over!")
 	
@@ -69,8 +68,9 @@ func add_fuel(amount: float):
 	set_fuel(_fuel + amount)
 
 func add_cube(cube):
-	connect("rocket", cube, "_on_start_rocket")
 	mass += cube.mass
+	if(cube.has_method("_on_start_rocket")):
+		connect("rocket", cube, "_on_start_rocket")
 	
 	_cubes.append(cube)
 	_update_center()

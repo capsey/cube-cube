@@ -59,7 +59,7 @@ ui_end={
 
 common/enable_pause_aware_picking=true
 2d/default_gravity_vector=Vector2( 0, 0 )
-2d/default_linear_damp=0.75
+2d/default_linear_damp=0.25
 
 [rendering]
 

@@ -1,14 +1,48 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Objects/Component Cube.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Component Cube Rocket.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Test Box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/CameraFollow.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Fuel Cube.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Component Cube Fuel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://space.png" type="Texture" id=8]
+[ext_resource path="res://stars.png" type="Texture" id=9]
 
 [node name="Test Scene" type="Node2D"]
+
+[node name="Node2D" type="ParallaxBackground" parent="."]
+scale = Vector2( 1.88, 1.88 )
+transform = Transform2D( 1.88, 0, 0, 1.88, 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D"]
+motion_scale = Vector2( 0.05, 0.05 )
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxLayer"]
+margin_left = -4096.0
+margin_top = -4096.0
+margin_right = 4096.0
+margin_bottom = 4096.0
+texture = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Node2D"]
+motion_scale = Vector2( 0.07, 0.07 )
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxLayer2"]
+margin_left = -4096.0
+margin_top = -4096.0
+margin_right = 4096.0
+margin_bottom = 4096.0
+texture = ExtResource( 9 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Interface" parent="." instance=ExtResource( 5 )]
 player_path = NodePath("../Player")
@@ -34,35 +68,34 @@ position = Vector2( 716.993, -391.436 )
 
 [node name="Cubes" type="Node" parent="."]
 
-[node name="Component Cube" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( -168.376, 192.999 )
-connecting_cube = ExtResource( 7 )
+[node name="Component Cube Fuel" parent="Cubes" instance=ExtResource( 7 )]
+position = Vector2( -511.376, 156.798 )
 
-[node name="Component Cube2" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( 376.239, -174.082 )
+[node name="Component Cube Fuel2" parent="Cubes" instance=ExtResource( 7 )]
+position = Vector2( -853.097, -411.189 )
 
-[node name="Component Cube3" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( 558.261, 365.32 )
+[node name="Component Cube Fuel3" parent="Cubes" instance=ExtResource( 7 )]
+position = Vector2( 862.774, 399.529 )
 
-[node name="Component Cube4" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( -571.497, -362.295 )
-connecting_cube = ExtResource( 7 )
+[node name="Component Cube Rocket" parent="Cubes" instance=ExtResource( 1 )]
+position = Vector2( -206.305, 542.073 )
 
-[node name="Component Cube5" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( -488.784, 426.292 )
+[node name="Component Cube Rocket2" parent="Cubes" instance=ExtResource( 1 )]
+position = Vector2( -302.522, -393.371 )
 
-[node name="Component Cube6" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( 171.929, -400.542 )
-connecting_cube = ExtResource( 7 )
+[node name="Component Cube Rocket3" parent="Cubes" instance=ExtResource( 1 )]
+position = Vector2( 497.505, -238.354 )
 
-[node name="Component Cube7" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( -760.619, 129.916 )
+[node name="Component Cube Rocket4" parent="Cubes" instance=ExtResource( 1 )]
+position = Vector2( 629.358, 173.241 )
 
-[node name="Component Cube8" parent="Cubes" instance=ExtResource( 1 )]
-position = Vector2( 862.349, 6.87921 )
+[node name="Component Cube Rocket5" parent="Cubes" instance=ExtResource( 1 )]
+position = Vector2( -90.488, -423.661 )
 
-[node name="Super Deadly Laser 2000" parent="." instance=ExtResource( 6 )]
-position = Vector2( -184.39, -163.756 )
+[node name="Laser" parent="." instance=ExtResource( 6 )]
+position = Vector2( 407.167, 604.199 )
+rotation = 1.5708
+length = 1000.0
 timer = 2.0
 
 [connection signal="center_changed" from="Player" to="Main Camera" method="center_changed"]

@@ -14,6 +14,11 @@ func _ready():
 	player.add_cube(self)
 
 func destroy():
+	var explosion = load("res://Objects/Explosion.tscn")
+	var instance: Node2D = explosion.instance()
+	get_parent().get_parent().add_child(instance)
+	instance.global_position = global_position
+	
 	queue_free()
 
 func _on_area_entered(area: Area2D):
