@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Sprites/component_cube_rocket.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/ComponentCube.gd" type="Script" id=2]
-[ext_resource path="res://Objects/Rocket Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/winning_cube.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/WinnerCube.gd" type="Script" id=2]
+[ext_resource path="res://Objects/Winner Cube.tscn" type="PackedScene" id=3]
 [ext_resource path="res://default_material.tres" type="PhysicsMaterial" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -10,8 +10,9 @@ extents = Vector2( 30, 30 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[node name="Component Cube Rocket" type="RigidBody2D"]
+[node name="Winner Cube" type="RigidBody2D"]
 mode = 2
+mass = 10.0
 physics_material_override = ExtResource( 4 )
 script = ExtResource( 2 )
 connecting_cube = ExtResource( 3 )
@@ -40,3 +41,5 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3.76, 3.76 )
 texture = ExtResource( 1 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

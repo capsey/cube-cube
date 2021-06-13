@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fuel_cube.png-b90320a6270fa9f15edfc52fda3cea8c.stex"
+path="res://.import/fire.png-c19317e7be4556577e0c723757e5f94c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fuel_cube.png"
-dest_files=[ "res://.import/fuel_cube.png-b90320a6270fa9f15edfc52fda3cea8c.stex" ]
+source_file="res://Sprites/fire.png"
+dest_files=[ "res://.import/fire.png-c19317e7be4556577e0c723757e5f94c.stex" ]
 
 [params]
 

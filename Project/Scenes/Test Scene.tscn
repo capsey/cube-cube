@@ -1,56 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/Component Cube Rocket.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Test Box.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/CameraFollow.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Main Camera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Manager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Component Cube Fuel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://space.png" type="Texture" id=8]
-[ext_resource path="res://stars.png" type="Texture" id=9]
 
 [node name="Test Scene" type="Node2D"]
 
-[node name="Node2D" type="ParallaxBackground" parent="."]
-scale = Vector2( 1.88, 1.88 )
-transform = Transform2D( 1.88, 0, 0, 1.88, 0, 0 )
+[node name="Manager" parent="." instance=ExtResource( 5 )]
+extents = Vector2( 1500, 750 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D"]
-motion_scale = Vector2( 0.05, 0.05 )
-
-[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxLayer"]
-margin_left = -4096.0
-margin_top = -4096.0
-margin_right = 4096.0
-margin_bottom = 4096.0
-texture = ExtResource( 8 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Node2D"]
-motion_scale = Vector2( 0.07, 0.07 )
-
-[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxLayer2"]
-margin_left = -4096.0
-margin_top = -4096.0
-margin_right = 4096.0
-margin_bottom = 4096.0
-texture = ExtResource( 9 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Interface" parent="." instance=ExtResource( 5 )]
-player_path = NodePath("../Player")
-
-[node name="Main Camera" type="Camera2D" parent="."]
-current = true
-smoothing_enabled = true
-script = ExtResource( 4 )
+[node name="Main Camera" parent="." instance=ExtResource( 4 )]
 target_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -97,5 +60,3 @@ position = Vector2( 407.167, 604.199 )
 rotation = 1.5708
 length = 1000.0
 timer = 2.0
-
-[connection signal="center_changed" from="Player" to="Main Camera" method="center_changed"]

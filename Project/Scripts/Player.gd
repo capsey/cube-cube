@@ -57,7 +57,7 @@ func _update_center():
 func set_fuel(amount: float):
 	_fuel = amount
 	
-	if _fuel < 0:
+	if _fuel <= 0:
 		emit_signal("rocket", 0, Vector2.ZERO, self)
 		_fuel = 0
 		print("Game Over!")
@@ -68,6 +68,9 @@ func add_fuel(amount: float):
 	set_fuel(_fuel + amount)
 
 func add_cube(cube):
+	var m = (mass) / (mass + cube.mass)
+	linear_velocity *= m
+	
 	mass += cube.mass
 	if(cube.has_method("_on_start_rocket")):
 		connect("rocket", cube, "_on_start_rocket")
@@ -80,7 +83,7 @@ func add_cube(cube):
 	
 	print(name + ": " + cube.name + " succesfully connected!")
 
-func remove_cube(cube):	
+func remove_cube(cube):
 	mass -= cube.mass
 	
 	_max_fuel -= cube.fuel
@@ -98,3 +101,12 @@ func remove_cube(cube):
 	
 	if _cubes.size() == 0:
 		linear_velocity = Vector2.ZERO
+
+func disable():
+#	for c in _cubes.duplicate():
+#		remove_cube(c)
+	
+	set_fuel(0)
+
+func you_won():
+	set_process(false)

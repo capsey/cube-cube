@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://rocket_cube.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/rocket_cube.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/RocketCube.gd" type="Script" id=2]
-[ext_resource path="res://fire.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/fire.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Rocket Fire.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]

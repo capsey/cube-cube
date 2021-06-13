@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://component_cube_fuel.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/component_cube_fuel.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/ComponentCube.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Fuel Cube.tscn" type="PackedScene" id=3]
 [ext_resource path="res://default_material.tres" type="PhysicsMaterial" id=4]
@@ -12,7 +12,7 @@ extents = Vector2( 30, 30 )
 
 [node name="Component Cube Fuel" type="RigidBody2D"]
 mode = 2
-mass = 3.0
+mass = 2.0
 physics_material_override = ExtResource( 4 )
 script = ExtResource( 2 )
 connecting_cube = ExtResource( 3 )

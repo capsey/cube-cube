@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laser_1.png-29f1cf9324b06f0ef5f87b22e7c93fba.stex"
+path="res://.import/component_cube_rocket.png-0c42b7138b2d93e42e2c7aa77f8806db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://laser_1.png"
-dest_files=[ "res://.import/laser_1.png-29f1cf9324b06f0ef5f87b22e7c93fba.stex" ]
+source_file="res://Sprites/component_cube_rocket.png"
+dest_files=[ "res://.import/component_cube_rocket.png-0c42b7138b2d93e42e2c7aa77f8806db.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

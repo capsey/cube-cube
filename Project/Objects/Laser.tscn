@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Laser.gd" type="Script" id=1]
-[ext_resource path="res://laser_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/laser_0.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/AnimatedLine.gd" type="Script" id=3]
-[ext_resource path="res://laser_1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/laser_1.png" type="Texture" id=4]
 
 [sub_resource type="RayShape2D" id=1]
 length = 1000.0

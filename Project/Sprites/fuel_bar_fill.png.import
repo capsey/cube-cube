@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/component_cube_rocket.png-4292c3c15ef75e9d2c28c57aa29e4448.stex"
+path="res://.import/fuel_bar_fill.png-9b7b91910a68e362111a498da12336bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://component_cube_rocket.png"
-dest_files=[ "res://.import/component_cube_rocket.png-4292c3c15ef75e9d2c28c57aa29e4448.stex" ]
+source_file="res://Sprites/fuel_bar_fill.png"
+dest_files=[ "res://.import/fuel_bar_fill.png-9b7b91910a68e362111a498da12336bd.stex" ]
 
 [params]
 

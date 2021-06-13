@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Manager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Main Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Component Cube Fuel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Component Cube Rocket.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Cube Winner.tscn" type="PackedScene" id=7]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Manager" parent="." instance=ExtResource( 1 )]
+position = Vector2( -5.65698, -172.534 )
+extents = Vector2( 1000, 750 )
+
+[node name="Main Camera" parent="." instance=ExtResource( 3 )]
+target_path = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6.10352e-05, 200 )
+linear_velocity = Vector2( 0, -50 )
+
+[node name="Component Cube Rocket" parent="." instance=ExtResource( 6 )]
+position = Vector2( -596.427, -180.238 )
+
+[node name="Component Cube Fuel" parent="." instance=ExtResource( 5 )]
+position = Vector2( 172.741, -207.784 )
+
+[node name="Winner Cube" parent="." instance=ExtResource( 7 )]
+position = Vector2( 493.785, -523.925 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -229.853, 389.753 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -231.972, 203.288 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -231.972, 10.4653 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -422.676, 10.4653 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -611.26, 6.22742 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -806.201, -178.119 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -619.735, -366.703 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -416.319, -364.585 )
+
+[node name="Wall9" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -210.783, -364.585 )
+
+[node name="Wall10" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -20.0804, -368.822 )
+
+[node name="Wall11" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 206.645, 12.5843 )
+
+[node name="Wall12" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 200.288, 186.336 )
+
+[node name="Wall13" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 208.763, 383.396 )
+
+[node name="Wall14" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 395.229, 14.7032 )
+
+[node name="Wall15" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 598.646, 18.941 )
+
+[node name="Wall16" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 793.587, 25.2978 )
+
+[node name="Wall17" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 166.385, -360.347 )
+
+[node name="Wall18" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 789.349, -163.286 )
+
+[node name="Wall19" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 778.754, -349.752 )
+
+[node name="Wall20" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 772.397, -536.217 )
+
+[node name="Wall21" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 183.336, -542.574 )
+
+[node name="Wall22" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 759.684, -733.277 )
+
+[node name="Wall23" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 581.694, -733.277 )
+
+[node name="Wall24" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 380.396, -737.515 )
+
+[node name="Wall25" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 181.217, -745.991 )
+
+[node name="Wall26" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -801.964, 6.22797 )
+
+[node name="Wall27" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -801.964, -360.346 )

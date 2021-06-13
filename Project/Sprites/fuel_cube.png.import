@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laser_0.png-c8dcf58ee2dad36847cc30308a2edf35.stex"
+path="res://.import/fuel_cube.png-f2089cf7f1650768f65167cd54ad352f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://laser_0.png"
-dest_files=[ "res://.import/laser_0.png-c8dcf58ee2dad36847cc30308a2edf35.stex" ]
+source_file="res://Sprites/fuel_cube.png"
+dest_files=[ "res://.import/fuel_cube.png-f2089cf7f1650768f65167cd54ad352f.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
