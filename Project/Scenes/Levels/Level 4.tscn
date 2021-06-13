@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Manager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Main Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Cube Winner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Test Scene.tscn" type="PackedScene" id=8]
+
+[node name="Level 3" type="Node2D"]
+
+[node name="Manager" parent="." instance=ExtResource( 1 )]
+extents = Vector2( 500, 500 )
+
+[node name="Main Camera" parent="." instance=ExtResource( 3 )]
+target_path = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2.28244, 211.638 )
+linear_velocity = Vector2( 0, -50 )
+
+[node name="Winner Cube" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0.279022, -208.959 )
+cubes_count = 6
+next_scene = ExtResource( 8 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[connection signal="center_changed" from="Player" to="Main Camera" method="center_changed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Manager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://Objects/Component Cube Fuel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Component Cube Rocket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Cube Winner.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Test Scene.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Levels/Level 2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://big label.tres" type="DynamicFont" id=9]
 
 [node name="Level 1" type="Node2D"]
 
@@ -118,3 +119,33 @@ position = Vector2( -801.964, -360.346 )
 
 [node name="Wall28" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( 1.3103, 386.36 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -459.72
+margin_top = -19.2717
+margin_right = -45.72
+margin_bottom = 103.728
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 9 )
+text = "WASD or Arrows
+To Move Around"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -317.72
+margin_top = -407.272
+margin_right = 250.28
+margin_bottom = -284.272
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 9 )
+text = "Don't forget about
+Fuel level at top left!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="center_changed" from="Player" to="Main Camera" method="center_changed"]

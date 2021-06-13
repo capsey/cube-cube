@@ -1,0 +1,141 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Manager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Main Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Component Cube Fuel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Component Cube Rocket.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Cube Winner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Levels/Level 4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Test Box.tscn" type="PackedScene" id=9]
+
+[node name="Level 3" type="Node2D"]
+
+[node name="Manager" parent="." instance=ExtResource( 1 )]
+position = Vector2( 27.9789, -276.805 )
+extents = Vector2( 750, 900 )
+
+[node name="Main Camera" parent="." instance=ExtResource( 3 )]
+target_path = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -276.006, 173.883 )
+linear_velocity = Vector2( 0, -50 )
+
+[node name="Winner Cube" parent="." instance=ExtResource( 7 )]
+position = Vector2( -314.975, -433.601 )
+cubes_count = 6
+next_scene = ExtResource( 8 )
+
+[node name="Test Box" parent="." instance=ExtResource( 9 )]
+position = Vector2( -106.492, -354.713 )
+
+[node name="Component Cube Rocket3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -125.362, 167.899 )
+
+[node name="Component Cube Fuel" parent="." instance=ExtResource( 5 )]
+position = Vector2( 222.601, 42.1837 )
+
+[node name="Component Cube Rocket" parent="." instance=ExtResource( 6 )]
+position = Vector2( 222.601, -74.5523 )
+
+[node name="Component Cube Rocket2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 238.315, -182.309 )
+
+[node name="Component Cube Fuel2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 141.784, -164.349 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -144.951, -15.748 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 62.9378, -5.84833 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 375.299, 2.63696 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 573.109, 5.77399 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 586.634, 192.913 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 579.075, 386.815 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 398.106, 397.203 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 191.631, 384.475 )
+
+[node name="Wall9" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -0.701782, 391.546 )
+
+[node name="Wall10" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -204.349, 381.646 )
+
+[node name="Wall11" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -347.184, -18.5762 )
+
+[node name="Wall12" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -506.99, -11.5052 )
+
+[node name="Wall13" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -508.404, 190.727 )
+
+[node name="Wall14" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -511.233, 375.989 )
+
+[node name="Wall15" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -374.054, 375.989 )
+
+[node name="Wall16" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -509.245, -207.003 )
+
+[node name="Wall17" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -504.755, -400.066 )
+
+[node name="Wall18" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -509.245, -588.64 )
+
+[node name="Wall19" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -340.875, -597.62 )
+
+[node name="Wall20" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 228.786, -568.481 )
+
+[node name="Wall21" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 572.58, -177.819 )
+
+[node name="Wall22" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 571.87, -370.172 )
+
+[node name="Wall23" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 572.694, -557.531 )
+
+[node name="Wall24" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 394.085, -563.441 )
+
+[node name="Wall25" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 222.876, -755.68 )
+
+[node name="Wall26" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -338.63, -790.683 )
+
+[node name="Wall27" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 215.866, -955.043 )
+
+[node name="Wall28" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 34.0271, -988.236 )
+
+[node name="Wall29" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -159.036, -992.726 )
+
+[node name="Wall30" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -347.61, -990.481 )
+
+[connection signal="center_changed" from="Player" to="Main Camera" method="center_changed"]

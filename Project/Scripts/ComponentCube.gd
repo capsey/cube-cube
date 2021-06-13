@@ -4,9 +4,6 @@ extends RigidBody2D
 export var connecting_cube: Resource
 
 # PRIVATE METHODS
-func _ready():
-	linear_velocity = Vector2(randf(), randf()) * 10
-
 func _snap_position(center: Vector2):
 	var result = position - center
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/Component Cube Rocket.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -8,11 +8,14 @@
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Component Cube Fuel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Cube Winner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://big label.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Scenes/Main Menu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=11]
 
 [node name="Test Scene" type="Node2D"]
 
 [node name="Manager" parent="." instance=ExtResource( 5 )]
-extents = Vector2( 1500, 750 )
+extents = Vector2( 3000, 3000 )
 
 [node name="Main Camera" parent="." instance=ExtResource( 4 )]
 target_path = NodePath("../Player")
@@ -59,10 +62,116 @@ position = Vector2( -90.488, -423.661 )
 [node name="Winner Cube" parent="Cubes" instance=ExtResource( 8 )]
 position = Vector2( 1117.23, -178.191 )
 cubes_count = 9
-next_scene = null
+next_scene = ExtResource( 10 )
 
 [node name="Laser" parent="." instance=ExtResource( 6 )]
 position = Vector2( 407.167, 604.199 )
 rotation = 1.5708
 length = 1000.0
 timer = 2.0
+
+[node name="Wall" parent="." instance=ExtResource( 11 )]
+position = Vector2( -698.321, 597.075 )
+rotation = 1.5708
+
+[node name="Wall2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 504.392, 604.202 )
+
+[node name="Thanks" type="Label" parent="."]
+margin_left = -300.0
+margin_top = -150.0
+margin_right = 300.0
+margin_bottom = -90.0
+rect_pivot_offset = Vector2( 300, 30 )
+custom_fonts/font = ExtResource( 9 )
+text = "Thank You For Playing!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks2" type="Label" parent="."]
+margin_left = -1270.14
+margin_top = -56.7657
+margin_right = -666.139
+margin_bottom = 255.234
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 300, 30 )
+custom_fonts/font = ExtResource( 9 )
+text = "If you go away too far
+You'll die, though...
+
+Not die, actually, just
+fuel will run out"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks3" type="Label" parent="."]
+margin_left = 816.29
+margin_top = -333.948
+margin_right = 1420.29
+margin_bottom = -210.948
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 300, 30 )
+custom_fonts/font = ExtResource( 9 )
+text = "This is to go back
+to main menu "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks4" type="Label" parent="."]
+margin_left = -179.72
+margin_top = 465.255
+margin_right = 639.28
+margin_bottom = 1029.25
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 300, 30 )
+custom_fonts/font = ExtResource( 9 )
+text = "If you destroy cube between
+other cubes, remaining cubes
+will still be attached
+
+
+I knew this would happen, but
+didn't had time to fix
+
+(maybe someday I will fix this)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks5" type="Label" parent="."]
+margin_left = -843.222
+margin_top = -427.511
+margin_right = -24.2223
+margin_bottom = 136.489
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 300, 30 )
+custom_fonts/font = ExtResource( 9 )
+text = "This is weird that movable
+and immovable junk have same
+sprite, I really need to change
+that"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks6" type="Label" parent="."]
+margin_left = 1327.18
+margin_top = 543.85
+margin_right = 2146.19
+margin_bottom = 1107.85
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 300, 30 )
+custom_fonts/font = ExtResource( 9 )
+text = "I'm waiting for export templates
+to download, so I'm writing this
+
+Also Jam will close in 30 minutes
+and I have only 3 levels, that sucks"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="center_changed" from="Player" to="Main Camera" method="center_changed"]
