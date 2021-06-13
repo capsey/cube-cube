@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/Component Cube.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scripts/CameraFollow.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Fuel Cube.tscn" type="PackedScene" id=7]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -35,6 +36,7 @@ position = Vector2( 716.993, -391.436 )
 
 [node name="Component Cube" parent="Cubes" instance=ExtResource( 1 )]
 position = Vector2( -168.376, 192.999 )
+connecting_cube = ExtResource( 7 )
 
 [node name="Component Cube2" parent="Cubes" instance=ExtResource( 1 )]
 position = Vector2( 376.239, -174.082 )
@@ -44,12 +46,14 @@ position = Vector2( 558.261, 365.32 )
 
 [node name="Component Cube4" parent="Cubes" instance=ExtResource( 1 )]
 position = Vector2( -571.497, -362.295 )
+connecting_cube = ExtResource( 7 )
 
 [node name="Component Cube5" parent="Cubes" instance=ExtResource( 1 )]
 position = Vector2( -488.784, 426.292 )
 
 [node name="Component Cube6" parent="Cubes" instance=ExtResource( 1 )]
 position = Vector2( 171.929, -400.542 )
+connecting_cube = ExtResource( 7 )
 
 [node name="Component Cube7" parent="Cubes" instance=ExtResource( 1 )]
 position = Vector2( -760.619, 129.916 )
